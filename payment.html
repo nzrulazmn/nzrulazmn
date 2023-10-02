@@ -28,7 +28,383 @@
         <link href="assets/css/style.css" rel="stylesheet"> 
     </head>
 
-    <body>
+    <style>
+        .paymentBox{
+            display: flex;
+            width: 100%; height: 110vh;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .address, .info{
+            flex: 50%; height: auto;
+            padding: 40px;
+        }
+
+        .info{
+            flex: 30%;
+        }
+
+        label{
+            margin-top: 40px;
+            font-weight: bold;
+        }
+
+        input, select, .detailsBox{
+            width: 95%; height: 40px;
+            border: none;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding-left: 10px; padding-right: 10px;
+            margin-top: 10px;
+        }
+
+        option:checked, option:hover, select:checked{
+            background-color: #FFCC00;
+        }
+
+        .detailsBox{
+            display: flex;
+        }
+
+        .detailsIcon, .detailsInput{
+            flex: 5%; height: auto;
+        }
+
+        .detailsIcon{
+            background: url('/assets/img/mastercard.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        .detailsInput{
+            flex: 50%; height: auto; 
+            border: none;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
+            margin: 0;
+            padding-left: 10px; padding-right: 10px;
+        }
+
+        .detailsDate{
+            flex: 20%; height: auto;
+            box-shadow: none;
+            margin: 0;
+        }
+
+        .detailsCvv{
+            flex: 8%; height: auto;
+            box-shadow: none;
+            margin: 0;
+        }
+
+        .halfInput{
+            display: inline-block;
+            width: 45%;
+        }
+
+        button{
+            display: block;
+            width: 100%; height: 50px;
+            margin-top: 50px;
+            margin-left: auto; margin-right: auto;
+            border: none; border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background-color: #FFCC00; font-weight: bold;
+        }
+
+        .sumBox{
+            display: flex;
+            width: 95%; height: 30px;
+            margin-top: 40px;
+        }
+
+        .sumLeft, .sumRight{
+            flex: 50%; height: auto;
+            font-weight: bold;
+        }
+
+        .sumLeft{
+            flex: 90%;
+        }
+
+        .sumRight{
+            text-align: right;
+        }
+
+        del{
+            color: grey;
+        }
+
         
-    </body>
+        .imageBox{
+            display: block;
+            width: 100%; height: 30%;
+            margin-left: auto; margin-right: auto;
+            margin-top: 200px;
+        }
+
+        .imageBox img{
+            display: block;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-left: auto; margin-right: auto;
+        }
+
+        .infoLine{
+            display: flex;
+            width: 90%; height: 30px;
+            margin-top: 10px;
+            margin-left: auto; margin-right: auto;
+        }
+
+        .infoLine:nth-child(2){
+            margin-top: 40px;
+        }
+
+        .infoLineLeft, .infoLineRight{
+            flex: 5%; height: auto;
+        }
+
+        .infoLineRight{
+            flex: 90%;
+            font-size: 14px;
+            line-height: 30px;
+        }
+        
+    </style>
+
+<body>
+<!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.html">Islamic Mind<span>.</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+    </div>
+</header><!-- End Header -->
+
+<main id="main">
+    <!-- ======= Payment Section ======= -->
+    <section class="payment section-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2 data-aos="fade-in">Payment</h2>
+                <h3>Accessible to all grades</h3>
+                <p data-aos="fade-in">*Free trial for 7 days, then yearly subscription</p>
+            </div>
+
+            <div class="paymentBox">
+                <!--left side-->
+                <div class="info">
+                    <div class="imageBox">
+                        <img src="/assets/img/pay.gif" alt="animated picture">
+                        <div class="infoLine">
+                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                            <div class="infoLineRight">Any grade level Questions are accessible at all times.</div>
+                        </div>
+                        <div class="infoLine">
+                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                            <div class="infoLineRight">Aligned with Brunei's JPI most recent syllabus</div>
+                        </div>
+                        <div class="infoLine">
+                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                            <div class="infoLineRight">Hundreds Step-by-Step videos & audios Explanations</div>
+                        </div>
+                        <div class="infoLine">
+                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                            <div class="infoLineRight">Reward Systems for Building Learning Habits</div>
+                        </div>
+                        <div class="infoLine">
+                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                            <div class="infoLineRight">Proficiency Reports with Islamic Mind Parent App</div>
+                        </div>
+                        <div class="infoLine">
+                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                            <div class="infoLineRight">Child-Safe Content with Zero Ads</div>
+                        </div>
+                        <div class="infoLine">
+                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                            <div class="infoLineRight">Higher-Order Thinking Skills (HOTS) Questions</div>
+                        </div>
+                        <div class="infoLine">
+                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                            <div class="infoLineRight">Avatar customization</div>
+                        </div>
+                        <div class="infoLine">
+                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                            <div class="infoLineRight">Higher-Order Thinking Skills (HOTS) Questions</div>
+                        </div>
+                    </div>
+                </div>
+                <!--right side-->
+                <form class="address">
+                    <h3>Payment Details</h3>
+                    <p><b style="font-size: 34px; color: #FFCC00;">$8.25</b> / month<br>Annual only : $99.00 USD / Year</p>
+                    <label for="email" style="margin-top: 10px;">Parent's Email Address</label> <br>
+                    <input type="email" placeholder="Enter email address"> <br>
+
+                    <label for="email">Parent's Phone Number</label> <br>
+                    <input type="email" placeholder="Enter phone numbers"> <br>
+
+                    <label for="email">Card Details</label> <br>
+                    <div class="detailsBox">
+                        <div class="detailsIcon"></div>
+                        <input type="text" class="detailsInput" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" minlenght="16" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+                        <input type="month" class="detailsDate" value="Expiry Date">
+                        <input type="password" class="detailsCvv" placeholder="CVV" maxlength="3">
+                    </div>
+
+                    <label for="email">Cardholder Name</label> <br>
+                    <input type="text" placeholder="Enter your cardholder name"> <br>
+
+                    <label for="email">Billing Address</label> <br>
+                    <Select>
+                        <option value="">Select Country</option>
+                        <option value="bn">Brunei Darussalam</option>
+                        <option value="my">Malaysia</option>
+                        <option value="ind">Indonesia</option>
+                        <option value="sg">Singapore</option>
+                        <option value="chi">China</option>
+                        <option value="as">Saudi Arabia</option>
+                        <option value="tk">Turkey</option>
+                    </Select> <br>
+                    <input type="text" class="halfInput" placeholder="Zip">&nbsp;
+                    <input type="text" class="halfInput" placeholder="State"><br> <!--can use select option-->
+
+                    <label for="email">Discount Code</label> <br>
+                    <input type="text" placeholder="Enter discount code"> <br>
+
+                    <div class="sumBox">
+                        <div class="sumLeft">Discount :</div>
+                        <div class="sumRight">-$15.00 USD</div> <!--this is just example-->
+                    </div>
+
+                    <div class="sumBox" style="margin-top: 10px;">
+                        <div class="sumLeft">Subtotal :</div>
+                        <div class="sumRight">$99.00 USD</div>
+                    </div>
+
+                    <div class="sumBox" style="margin-top: 10px;">
+                        <div class="sumLeft">Total :</div>
+                        <div class="sumRight" style="color: red;"><del>$99.00 USD </del> &nbsp; $84.00 USD</div>
+                    </div>
+                    <button type="submit">Pay Now</button>
+                </form>
+            </div>
+        </div>
+    </section><!-- End Payment Section -->
+
+    <section id="faq" class="faq section-bg">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2 data-aos="fade-in">Payment FAQs</h2>
+            <p data-aos="fade-in">Your pleasure is our first goal at <b>Islamic Mind</b>. As a result, our customer support staff is ready to assist you as quickly as possible.</p>
+          </div>
+  
+          <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up">
+            <div class="col-lg-5">
+              <i class="bx bx-help-circle"></i>
+              <h4>Do you have free trial?</h4>
+            </div>
+            <div class="col-lg-7">
+              <p>
+                Yes, only for <b>newly registered accounts</b> are given access to a free trial period, and we would like to suggest that you take advantage of a <b>7-Day Free Trial</b> to further assess the programme and decide whether to make a long-term invesment in your child's education.
+              </p>
+            </div>
+          </div><!-- End F.A.Q Item-->
+  
+          <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-5">
+              <i class="bx bx-help-circle"></i>
+              <h4>Can I pay monthly or few months rather than yearly?</h4>
+            </div>
+            <div class="col-lg-7">
+              <p>
+                Unfortunately, <b>only yearly billing is accepted</b>. If you want to give it a month's worth, we would like to suggest that you take advantage of a <b>7-Day Free Trial</b> to further assess the programme and decide whether to make a long-term invesment in your child's education.
+              </p>
+            </div>
+          </div><!-- End F.A.Q Item-->
+
+          <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-5">
+              <i class="bx bx-help-circle"></i>
+              <h4>Is there information available in any grades that I can access?</h4>
+            </div>
+            <div class="col-lg-7">
+              <p>
+                Yes. Your child's account provides <b>unlimited access</b> to all of Islamic Mind's features, including all levels from beginner to intermediate annually;
+              </p>
+            </div>
+          </div><!-- End F.A.Q Item-->
+
+          <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-5">
+              <i class="bx bx-help-circle"></i>
+              <h4>I just made a payment. When can I use the programme?</h4>
+            </div>
+            <div class="col-lg-7">
+              <p>
+                Following a successful transaction, you'll receive <b>quick confirmation</b>, and shortly thereafter, you'll <b>receive an email</b> that you submit earlier <b>within an hour</b>. If you have <b>not received an email</b> from us within that time frame, please feel free to contact our customer support service team at <b>support@IslamicMindPlus.com </b>at any working day.
+              </p>
+            </div>
+          </div><!-- End F.A.Q Item-->
+  
+        </div>
+      </section><!-- End Frequently Asked Questions Section -->
+</main>
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+    <div class="footer-top">
+
+      <div class="container">
+
+        <div class="row  justify-content-center">
+          <div class="col-lg-6">
+            <!-- <h3>ISLAMIC MIND</h3> -->
+            <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+            <p>Islamic Mind is an EdTech solution that provides Holistic education in academics synergized with Islamic Elements that is targeted for the global Muslim market. The curriculum covers students aged 5-12 with Islamic education content that is approved and endorsed by Islamic associations.</p>
+            <p>Launched in 2016, ISLAMIC MIND is the created with a vision to bringing together the best of Islamic learning pedagogy and innovative interactive media.</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-whatsapp"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Islamic Mind</span></strong> 2020 Mindtrex Academy Sdn Bhd. All rights reserved.  
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">Mindtrex Academy</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
 </html>
