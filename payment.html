@@ -31,10 +31,46 @@
     <style>
         .paymentBox{
             display: flex;
-            width: 100%; height: 110vh;
+            width: 100%; height: 130vh;
             margin: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        @media screen and (max-height: 900px){
+          .paymentBox{
+            height: 150vh;
+          }
+        }
+
+        @media screen and (max-height: 800px){
+          .paymentBox{
+            height: 170vh;
+          }
+        }
+
+        @media screen and (max-height: 700px){
+          .paymentBox{
+            height: 200vh;
+          }
+
+          p, .infoLineRight{
+            font-size: 12px !important;
+          }
+        }
+
+        @media screen and (max-height: 600px){
+          .paymentBox{
+            height: 240vh;
+          }
+
+          b{
+            font-size: 22px !important;
+          }
+
+          p, .infoLineRight{
+            font-size: 12px !important;
+          }
         }
 
         .address, .info{
@@ -51,7 +87,7 @@
             font-weight: bold;
         }
 
-        input, select, .detailsBox{
+        input, select, .detailsBox, textarea{
             width: 95%; height: 40px;
             border: none;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -171,6 +207,20 @@
             font-size: 14px;
             line-height: 30px;
         }
+
+        .typeBox{
+          display: flex;
+          width: 100%; height: 10vh;
+        }
+
+        .typeLeft, .typeRight{
+          flex: 50%; height: auto;
+        }
+
+        input[type="radio"]{
+          width: 12px; height: 12px;
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
+        }
         
     </style>
 
@@ -214,15 +264,15 @@
                         <img src="/assets/img/pay.gif" alt="animated picture">
                         <div class="infoLine">
                             <div class="infoLineLeft"><i class="bx bx-check"></i></div>
-                            <div class="infoLineRight">Any grade level Questions are accessible at all times.</div>
+                            <div class="infoLineRight">Unlimited access to 100,000+ tutorials & questions</div>
                         </div>
                         <div class="infoLine">
-                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
-                            <div class="infoLineRight">Aligned with Brunei's JPI most recent syllabus</div>
-                        </div>
+                          <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                          <div class="infoLineRight">Contents are verified by credible islamic associations</div>
+                      </div>
                         <div class="infoLine">
                             <div class="infoLineLeft"><i class="bx bx-check"></i></div>
-                            <div class="infoLineRight">Hundreds Step-by-Step videos & audios Explanations</div>
+                            <div class="infoLineRight">Thousands Step-by-Step videos & audios Explanations</div>
                         </div>
                         <div class="infoLine">
                             <div class="infoLineLeft"><i class="bx bx-check"></i></div>
@@ -245,20 +295,31 @@
                             <div class="infoLineRight">Avatar customization</div>
                         </div>
                         <div class="infoLine">
-                            <div class="infoLineLeft"><i class="bx bx-check"></i></div>
-                            <div class="infoLineRight">Higher-Order Thinking Skills (HOTS) Questions</div>
-                        </div>
+                          <div class="infoLineLeft"><i class="bx bx-check"></i></div>
+                          <div class="infoLineRight">Can compete with other learners globally & win prizes</div>
+                      </div>
                     </div>
                 </div>
                 <!--right side-->
                 <form class="address">
                     <h3>Payment Details</h3>
-                    <p><b style="font-size: 34px; color: #FFCC00;">$8.25</b> / month<br>Annual only : $99.00 USD / Year</p>
+                    <div class="typeBox">
+                      <div class="typeLeft">
+                        <p><b style="font-size: 34px; color: #FFCC00;">$9.80</b> / month<br><input type="radio" name="price" value="months"> 6 Month: $59.00 USD / Year</p>
+                      </div>
+                      <div class="typeRight">
+                        <p><b style="font-size: 34px; color: #FFCC00;">$8.25</b> / month<br><input type="radio" name="price" value="yearly"> 1 Year: $99.00 USD / Year</p>
+                      </div>
+                    </div>
+                    <br>
                     <label for="email" style="margin-top: 10px;">Parent's Email Address</label> <br>
                     <input type="email" placeholder="Enter email address"> <br>
 
-                    <label for="email">Parent's Phone Number</label> <br>
-                    <input type="email" placeholder="Enter phone numbers"> <br>
+                    <label for="phone">Parent's Phone Number</label> <br>
+                    <input type="text" placeholder="Enter phone numbers"> <br>
+
+                    <label for="child">Child's Name</label> <br>
+                    <input type="text" placeholder="Enter child's name"> <br>
 
                     <label for="email">Card Details</label> <br>
                     <div class="detailsBox">
@@ -268,10 +329,10 @@
                         <input type="password" class="detailsCvv" placeholder="CVV" maxlength="3">
                     </div>
 
-                    <label for="email">Cardholder Name</label> <br>
+                    <label for="cardholder">Cardholder Name</label> <br>
                     <input type="text" placeholder="Enter your cardholder name"> <br>
 
-                    <label for="email">Billing Address</label> <br>
+                    <label for="address">Billing Address</label> <br>
                     <Select>
                         <option value="">Select Country</option>
                         <option value="bn">Brunei Darussalam</option>
@@ -285,7 +346,7 @@
                     <input type="text" class="halfInput" placeholder="Zip">&nbsp;
                     <input type="text" class="halfInput" placeholder="State"><br> <!--can use select option-->
 
-                    <label for="email">Discount Code</label> <br>
+                    <label for="discount">Discount Code</label> <br>
                     <input type="text" placeholder="Enter discount code"> <br>
 
                     <div class="sumBox">
